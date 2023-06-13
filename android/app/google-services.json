@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "719204243926",
+    "project_id": "natzard-99190",
+    "storage_bucket": "natzard-99190.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:719204243926:android:59e307079a80da1acfec77",
+        "android_client_info": {
+          "package_name": "com.example.natzard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "719204243926-t06ouv5htviiltlbcohipiirliu59n0o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7YVxLXWkFQkQwakwjYctnideSDTFmjXg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "719204243926-t06ouv5htviiltlbcohipiirliu59n0o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
