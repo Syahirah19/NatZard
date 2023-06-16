@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 import '../../../components/background.dart';
 import '../../responsive.dart';
@@ -43,7 +44,7 @@ class MobileLoginScreen extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widgett build(BuildContext context) {
+  Widget build(BuildContext context) {
     return const Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[

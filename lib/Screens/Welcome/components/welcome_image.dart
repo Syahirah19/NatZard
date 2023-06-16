@@ -22,7 +22,7 @@ class WelcomeImage extends StatelessWidget {
             Expanded(
               flex: 8,
               child: Image.asset(
-                'assets/image/natzard.png',
+                'assets/image/Logo_natzard.png',
               ),
             ),
             const Spacer(),

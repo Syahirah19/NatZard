@@ -5,7 +5,7 @@ import '../../../contants.dart';
 class CategoryCard extends StatelessWidget {
   final String svgSrc;
   final String title;
-  final Function press;
+  final Function() press;
   const CategoryCard({
     Key? key,
     required this.svgSrc,
@@ -48,7 +48,7 @@ class CategoryCard extends StatelessWidget {
                     style: Theme.of(context)
                         .textTheme
                         .titleLarge
-                        .copyWith(fontSize: 15),
+                        ?.copyWith(fontSize: 15),
                   )
                 ],
               ),

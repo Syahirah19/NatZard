@@ -30,11 +30,10 @@ class UserRepository extends GetxController {
   }
 
   authUser(email, password) async {
-    QuerySnapshot<Map<String, dynamic>> document = await FirebaseFirestore
-        .instance
+    QuerySnapshot<Map<String, dynamic>> document = await _db
         .collection("User")
-        .where("Email", isEqualTo: email)
-        .where("Password", isEqualTo: password)
+        .where("email", isEqualTo: email)
+        .where("password", isEqualTo: password)
         .get();
 
     if (document.docs.isNotEmpty) {
@@ -48,6 +47,7 @@ class UserRepository extends GetxController {
 
       return true;
     } else {
+      // print('error');
       Get.snackbar("Error", "Incorrect email or password. Try again",
           snackPosition: SnackPosition.BOTTOM,
           backgroundColor: Colors.redAccent.withOpacity(0.1),

@@ -18,17 +18,25 @@ class BottomNavBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           BottomNavItem(
-            title: "Today",
-            svgScr: "assets/icons/calendar.svg",
+            title: "Resources",
+            svgScr: "assets/icons/Resources.svg",
           ),
           BottomNavItem(
-            title: "All Exercises",
-            svgScr: "assets/icons/gym.svg",
+            title: "Search",
+            svgScr: "assets/icons/Search.svg",
             isActive: true,
           ),
           BottomNavItem(
-            title: "Settings",
-            svgScr: "assets/icons/Settings.svg",
+            title: "Home",
+            svgScr: "assets/icons/Home.svg",
+          ),
+          BottomNavItem(
+            title: "Profile",
+            svgScr: "assets/icons/Profile.svg",
+          ),
+          BottomNavItem(
+            title: "Menu",
+            svgScr: "assets/icons/Menu.svg",
           ),
         ],
       ),
@@ -39,13 +47,13 @@ class BottomNavBar extends StatelessWidget {
 class BottomNavItem extends StatelessWidget {
   final String svgScr;
   final String title;
-  final Function press;
+  final Function()? press;
   final bool isActive;
   const BottomNavItem({
-    required Key key,
+    key,
     required this.svgScr,
     required this.title,
-    required this.press,
+    this.press,
     this.isActive = false,
   }) : super(key: key);
 
@@ -59,6 +67,9 @@ class BottomNavItem extends StatelessWidget {
           SvgPicture.asset(
             svgScr,
             color: isActive ? kActiveIconColor : kTextColor,
+            fit: BoxFit.scaleDown,
+            height: 30,
+            width: 30,
           ),
           Text(
             title,

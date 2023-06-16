@@ -1,28 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
-// import 'package:meditation_app/widgets/bottom_nav_bar.dart';
-// import 'package:meditation_app/widgets/search_bar.dart';
+import 'package:natzard/Screens/Weather/weather_screen.dart';
+import 'package:natzard/System/bottom_nav_view.dart';
+import 'package:natzard/System/tab_icons/tabicon_data.dart';
 
 import '../../contants.dart';
-import 'components/bottom_nav_bar.dart';
+// import 'components/bottom_nav_bar.dart';
 
 class DetailsScreen extends StatelessWidget {
+  const DetailsScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
+    List<TabIconData> tabIconsList = TabIconData.tabIconsList;
+
     return Scaffold(
-      bottomNavigationBar: const BottomNavBar(),
+      bottomNavigationBar: BottomNavView(
+        tabIconsList: tabIconsList,
+      ),
       body: Stack(
         children: <Widget>[
+          //Kotak purple
           Container(
-            height: size.height * .45,
+            height: size.height * .25,
             decoration: const BoxDecoration(
-              color: kBlueLightColor,
-              image: DecorationImage(
-                image: AssetImage("assets/images/meditation_bg.png"),
-                fit: BoxFit.fitWidth,
-              ),
+              color: kGreenColor,
+              // image: DecorationImage(
+              //   image: AssetImage("assets/image/Logo_natzard.png"),
+              //   fit: BoxFit.fitWidth,
+              // ),
             ),
           ),
           SafeArea(
@@ -35,110 +42,122 @@ class DetailsScreen extends StatelessWidget {
                     SizedBox(
                       height: size.height * 0.05,
                     ),
-                    Text(
-                      "Meditation",
-                      style: Theme.of(context)
-                          .textTheme
-                          .headlineMedium
-                          .copyWith(fontWeight: FontWeight.w900),
+                    const Text(
+                      "Welcome to Natzard",
+                      style: TextStyle(
+                        fontFamily: "Work Sans",
+                        fontWeight: FontWeight.bold,
+                        fontSize: 35,
+                        letterSpacing: 0.0,
+                        color: Colors.black,
+                      ),
                     ),
                     const SizedBox(height: 10),
                     const Text(
-                      "3-10 MIN Course",
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      "Hai Syahirah Arsad",
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                     ),
                     const SizedBox(height: 10),
                     SizedBox(
                       width: size.width * .6, // it just take 60% of total width
                       child: const Text(
-                        "Live happier and healthier by learning the fundamentals of meditation and mindfulness",
+                        "Prepare the umbrella before the rain with us! Always be safe",
                       ),
                     ),
-                    SizedBox(
-                      width: size.width * .5, // it just take the 50% width
-                      child: const SearchBar(),
-                    ),
+                    const SizedBox(height: 30),
+
+                    // SizedBox(
+                    //   width: size.width * .5, // it just take the 50% width
+                    //   child: const SearchBar(),
+                    // ),
                     Wrap(
                       spacing: 20,
                       runSpacing: 20,
                       children: <Widget>[
                         SeassionCard(
-                          seassionNum: 1,
+                          seassionNum: "Impacted\nAreas",
                           isDone: true,
                           press: () {},
                         ),
                         SeassionCard(
-                          seassionNum: 2,
+                          seassionNum: "Donation",
                           press: () {},
                         ),
                         SeassionCard(
-                          seassionNum: 3,
+                          seassionNum: "Resources",
                           press: () {},
                         ),
                         SeassionCard(
-                          seassionNum: 4,
+                          seassionNum: "Live Stream",
                           press: () {},
                         ),
                         SeassionCard(
-                          seassionNum: 5,
-                          press: () {},
+                          seassionNum: "Weather",
+                          press: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const HomeScreen()),
+                            );
+                          },
                         ),
                         SeassionCard(
-                          seassionNum: 6,
+                          seassionNum: "Share",
                           press: () {},
                         ),
                       ],
                     ),
                     const SizedBox(height: 20),
                     Text(
-                      "Meditation",
+                      "Activity Wall",
                       style: Theme.of(context)
                           .textTheme
                           .titleLarge
-                          .copyWith(fontWeight: FontWeight.bold),
+                          ?.copyWith(fontWeight: FontWeight.bold),
                     ),
-                    Container(
-                      margin: const EdgeInsets.symmetric(vertical: 20),
-                      padding: const EdgeInsets.all(10),
-                      height: 90,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(13),
-                        boxShadow: const [
-                          BoxShadow(
-                            offset: Offset(0, 17),
-                            blurRadius: 23,
-                            spreadRadius: -13,
-                            color: kShadowColor,
-                          ),
-                        ],
-                      ),
-                      child: Row(
-                        children: <Widget>[
-                          SvgPicture.asset(
-                            "assets/icons/Meditation_women_small.svg",
-                          ),
-                          const SizedBox(width: 20),
-                          Expanded(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                Text(
-                                  "Basic 2",
-                                  style: Theme.of(context).textTheme.titleSmall,
-                                ),
-                                const Text("Start your deepen you practice")
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(10),
-                            child: SvgPicture.asset("assets/icons/Lock.svg"),
-                          ),
-                        ],
-                      ),
-                    )
+                    // Container(
+                    //   margin: const EdgeInsets.symmetric(vertical: 20),
+                    //   padding: const EdgeInsets.all(10),
+                    //   height: 90,
+                    //   decoration: BoxDecoration(
+                    //     color: Colors.white,
+                    //     borderRadius: BorderRadius.circular(13),
+                    //     boxShadow: const [
+                    //       BoxShadow(
+                    //         offset: Offset(0, 17),
+                    //         blurRadius: 23,
+                    //         spreadRadius: -13,
+                    //         color: kShadowColor,
+                    //       ),
+                    //     ],
+                    //   ),
+                    //   // child: Row(
+                    //   //   children: <Widget>[
+                    //   //     SvgPicture.asset(
+                    //   //       "assets/icons/Meditation_women_small.svg",
+                    //   //     ),
+                    //   //     const SizedBox(width: 20),
+                    //   //     Expanded(
+                    //   //       child: Column(
+                    //   //         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    //   //         crossAxisAlignment: CrossAxisAlignment.start,
+                    //   //         children: <Widget>[
+                    //   //           Text(
+                    //   //             "Report 1",
+                    //   //             style: Theme.of(context).textTheme.titleSmall,
+                    //   //           ),
+                    //   //           const Text("Snake in my house")
+                    //   //         ],
+                    //   //       ),
+                    //   //     ),
+                    //   //     Padding(
+                    //   //       padding: const EdgeInsets.all(10),
+                    //   //       child: SvgPicture.asset("assets/icons/Lock.svg"),
+                    //   //     ),
+                    //   //   ],
+                    //   // ),
+                    // )
                   ],
                 ),
               ),
@@ -151,9 +170,9 @@ class DetailsScreen extends StatelessWidget {
 }
 
 class SeassionCard extends StatelessWidget {
-  final int seassionNum;
+  final String seassionNum;
   final bool isDone;
-  final Function press;
+  final Function()? press;
   const SeassionCard({
     Key? key,
     required this.seassionNum,
@@ -194,18 +213,18 @@ class SeassionCard extends StatelessWidget {
                       height: 42,
                       width: 43,
                       decoration: BoxDecoration(
-                        color: isDone ? kBlueColor : Colors.white,
+                        color: isDone ? kGreenColor : Colors.white,
                         shape: BoxShape.circle,
-                        border: Border.all(color: kBlueColor),
+                        border: Border.all(color: kGreenColor),
                       ),
                       child: Icon(
                         Icons.play_arrow,
-                        color: isDone ? Colors.white : kBlueColor,
+                        color: isDone ? Colors.white : kGreenColor,
                       ),
                     ),
                     const SizedBox(width: 10),
                     Text(
-                      "Session $seassionNum",
+                      seassionNum,
                       style: Theme.of(context).textTheme.titleSmall,
                     )
                   ],
