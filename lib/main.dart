@@ -1,11 +1,11 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+// import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:natzard/System/system_screen.dart';
 import 'package:natzard/contants.dart';
 import 'package:provider/provider.dart';
-import 'Screens/MainDashboard/details_screen.dart';
+// import 'Screens/MainDashboard/details_screen.dart';
 import 'Screens/Weather/provider/weather_provider.dart';
 import 'firebase_options.dart';
 

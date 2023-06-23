@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:natzard/Screens/Weather/weather_screen.dart';
-import 'package:natzard/System/bottom_nav_view.dart';
-import 'package:natzard/System/tab_icons/tabicon_data.dart';
 
 import '../../contants.dart';
 // import 'components/bottom_nav_bar.dart';

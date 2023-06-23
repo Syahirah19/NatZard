@@ -62,7 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
             if (weatherProv.isLocationError) return const LocationError();
             return Column(
               children: [
-                const SearchBar(),
+                // const SearchBar(),
                 Center(
                   child: SmoothPageIndicator(
                     controller: _pageController,
