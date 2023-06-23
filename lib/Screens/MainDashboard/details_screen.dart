@@ -13,12 +13,7 @@ class DetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    List<TabIconData> tabIconsList = TabIconData.tabIconsList;
-
     return Scaffold(
-      bottomNavigationBar: BottomNavView(
-        tabIconsList: tabIconsList,
-      ),
       body: Stack(
         children: <Widget>[
           //Kotak purple

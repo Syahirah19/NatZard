@@ -23,6 +23,12 @@ class _BottomNavViewState extends State<BottomNavView>
     with TickerProviderStateMixin {
   AnimationController? animationController;
 
+  List<TabIconData> tabIconsList = TabIconData.tabIconsList;
+
+  Widget tabBody = Container(
+    color: const Color(0xffE0F5B9),
+  );
+
   @override
   void initState() {
     animationController = AnimationController(
@@ -31,6 +37,12 @@ class _BottomNavViewState extends State<BottomNavView>
     );
     animationController?.forward();
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    animationController?.dispose();
+    super.dispose();
   }
 
   @override
@@ -168,11 +180,7 @@ class _BottomNavViewState extends State<BottomNavView>
                           highlightColor: Colors.transparent,
                           focusColor: Colors.transparent,
                           onTap: widget.addClick,
-                          child: const Icon(
-                            Icons.camera,
-                            color: Colors.white,
-                            size: 32,
-                          ),
+                          child: Image.asset("assets/icons/home.png"),
                         ),
                       ),
                     ),
