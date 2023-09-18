@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:natzard/Screens/Donation/home/donor_home.dart';
 import 'package:natzard/Screens/Weather/weather_screen.dart';
 
 import '../../contants.dart';
@@ -15,13 +16,13 @@ class DetailsScreen extends StatelessWidget {
         children: <Widget>[
           //Kotak purple
           Container(
-            height: size.height * .25,
+            height: size.height * .28,
             decoration: const BoxDecoration(
               color: kGreenColor,
-              // image: DecorationImage(
-              //   image: AssetImage("assets/image/Logo_natzard.png"),
-              //   fit: BoxFit.fitWidth,
-              // ),
+              image: DecorationImage(
+                image: AssetImage("assets/image/top.png"),
+                fit: BoxFit.fitWidth,
+              ),
             ),
           ),
           SafeArea(
@@ -34,6 +35,8 @@ class DetailsScreen extends StatelessWidget {
                     SizedBox(
                       height: size.height * 0.05,
                     ),
+
+                    //Title
                     const Text(
                       "Welcome to Natzard",
                       style: TextStyle(
@@ -41,15 +44,11 @@ class DetailsScreen extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                         fontSize: 35,
                         letterSpacing: 0.0,
-                        color: Colors.black,
+                        color: Colors.white,
                       ),
                     ),
-                    const SizedBox(height: 10),
-                    const Text(
-                      "Hai Syahirah Arsad",
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-                    ),
+
+                    //Heading 1
                     const SizedBox(height: 10),
                     SizedBox(
                       width: size.width * .6, // it just take 60% of total width
@@ -74,7 +73,13 @@ class DetailsScreen extends StatelessWidget {
                         ),
                         SeassionCard(
                           seassionNum: "Donation",
-                          press: () {},
+                          press: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DonorHomeScreen()),
+                            );
+                          },
                         ),
                         SeassionCard(
                           seassionNum: "Resources",

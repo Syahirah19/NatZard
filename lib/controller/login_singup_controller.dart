@@ -1,8 +1,6 @@
-// ignore_for_file: use_build_context_synchronously
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:natzard/Screens/MainDashboard/details_screen.dart';
+import 'package:natzard/System/system_screen.dart';
 
 import '../model/user_model.dart';
 import '../repository/user_repository.dart';
@@ -30,7 +28,7 @@ class LoginSignUpController extends GetxController {
     await userRepo.createUser(user);
     Navigator.pop(context);
     Navigator.push(context, MaterialPageRoute(builder: (context) {
-      return const DetailsScreen();
+      return const SystemScreen();
     }));
   }
 
@@ -40,7 +38,7 @@ class LoginSignUpController extends GetxController {
     if (auth) {
       Navigator.pop(context);
       Navigator.push(context, MaterialPageRoute(builder: (context) {
-        return const DetailsScreen();
+        return const SystemScreen();
       }));
     }
   }

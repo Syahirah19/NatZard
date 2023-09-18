@@ -2,7 +2,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:natzard/System/system_screen.dart';
+import 'package:natzard/Screens/Login/Login_screen.dart';
+// import 'package:natzard/System/system_screen.dart';
 import 'package:natzard/contants.dart';
 import 'package:provider/provider.dart';
 // import 'Screens/MainDashboard/details_screen.dart';
@@ -53,7 +54,7 @@ class MyApp extends StatelessWidget {
                 borderSide: BorderSide.none,
               ),
             )),
-        home: const SystemScreen(),
+        home: const LoginScreen(),
       ),
     );
   }

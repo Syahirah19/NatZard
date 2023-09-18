@@ -29,6 +29,13 @@
             {
               "client_id": "719204243926-t06ouv5htviiltlbcohipiirliu59n0o.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "719204243926-tg6582vl8ct9ebe6t0n6nqllob4526s2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.natzard"
+              }
             }
           ]
         }
